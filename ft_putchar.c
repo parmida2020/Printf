@@ -6,13 +6,14 @@
 /*   By: ppourraj <ppourraj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 14:40:24 by ppourraj          #+#    #+#             */
-/*   Updated: 2026/05/18 18:12:45 by ppourraj         ###   ########.fr       */
+/*   Updated: 2026/05/19 18:03:06 by ppourraj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	write(1, &c, 1);
+	return (1);
 }

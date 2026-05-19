@@ -2,8 +2,7 @@ NAME	= libftprintf.a
 CC	= cc
 CFLAGS	= -Wall -Werror -Wextra
 SRCS = ft_printf.c ft_putchar.c ft_putnbr.c ft_putstr.c\
-		ft_putnbr_un.c ft_putpercent.c ft_print_hex.c\
-		ft_print_pointer.c\
+		ft_putnbr_un.c ft_print_hex.c\
 
 OBJS = $(SRCS:.c=.o)
 

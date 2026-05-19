@@ -6,23 +6,26 @@
 /*   By: ppourraj <ppourraj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 18:04:54 by ppourraj          #+#    #+#             */
-/*   Updated: 2026/05/18 18:15:29 by ppourraj         ###   ########.fr       */
+/*   Updated: 2026/05/19 18:23:13 by ppourraj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr(long n)
+int	ft_putnbr(long n)
 {
 	char	c;
+	int		count;
 
+	count = 0;
 	if (n < 0)
 	{
-		write(1, "-", 1);
+		count += ft_putchar('-');
 		n = -n;
 	}
 	if (n >= 10)
-		ft_putnbr(n / 10);
+		count += ft_putnbr(n / 10);
 	c = (n % 10) + '0';
-	write(1, &c, 1);
+	count += ft_putchar(c);
+	return (count);
 }

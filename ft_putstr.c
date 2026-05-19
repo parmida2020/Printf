@@ -6,20 +6,18 @@
 /*   By: ppourraj <ppourraj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 18:06:00 by ppourraj          #+#    #+#             */
-/*   Updated: 2026/05/18 18:15:24 by ppourraj         ###   ########.fr       */
+/*   Updated: 2026/05/19 18:04:19 by ppourraj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr(char *s)
+int	ft_putstr(char *s)
 {
 	int	i;
 
 	i = 0;
 	while (s[i])
-	{
-		write(1, &s[i], 1);
-		i++;
-	}
+		write(1, &s[i++], 1);
+	return (i);
 }
