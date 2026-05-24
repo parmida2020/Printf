@@ -35,25 +35,6 @@ The project focuses on reproducing the behavior of the original function while r
 
 ---
 
-# Project Structure
-
-```bash
-ft_printf/
-├── ft_printf.c
-├── ft_printf_utils.c
-├── ft_putchar.c
-├── ft_putstr.c
-├── ft_putnbr.c
-├── ft_putunsigned.c
-├── ft_puthex.c
-├── ft_putptr.c
-├── ft_printf.h
-├── Makefile
-└── README.md
-```
-
----
-
 # Instructions
 
 ## Compilation
@@ -70,19 +51,19 @@ This will generate:
 libftprintf.a
 ```
 
-## Cleaning Object Files
+Cleaning Object Files
 
 ```bash
 make clean
 ```
 
-## Full Clean
+Full Clean :
 
 ```bash
-make fclean
+make fclean 
 ```
 
-## Recompile Everything
+Recompile Everything :
 
 ```bash
 make re
@@ -193,57 +174,6 @@ This recursive approach keeps the implementation simple and readable.
 
 ---
 
-# Technical Choices
-
-## Why `write()` Instead of `printf()`
-
-The subject requires the use of the `write()` system call instead of the original `printf()` function.
-
-This helps develop a deeper understanding of:
-
-* Output streams
-* File descriptors
-* Low-level output handling
-
----
-
-## Why Separate Helper Functions
-
-Each conversion type was separated into its own function to improve:
-
-* Readability
-* Maintainability
-* Debugging
-* Reusability
-
-For example:
-
-* `ft_puthex()` handles hexadecimal numbers
-* `ft_putptr()` handles pointers
-* `ft_putnbr()` handles signed integers
-
-This modular structure makes the project easier to expand and maintain.
-
----
-
-# Challenges Faced
-
-Some of the main difficulties during the project included:
-
-* Understanding variadic arguments
-* Correctly handling `NULL` strings
-* Printing hexadecimal values recursively
-* Managing edge cases such as:
-
-  * `INT_MIN`
-  * `0`
-  * `NULL` pointers
-* Keeping track of the total printed length
-
-These challenges helped strengthen understanding of both C fundamentals and low-level programming concepts.
-
----
-
 # Resources
 
 ## Documentation & References
@@ -252,7 +182,6 @@ These challenges helped strengthen understanding of both C fundamentals and low-
 * [cplusplus printf Reference](https://cplusplus.com/reference/cstdio/printf/?utm_source=chatgpt.com)
 * [GNU C Library Documentation](https://www.gnu.org/software/libc/manual/html_node/Formatted-Output-Functions.html?utm_source=chatgpt.com)
 * [stdarg.h Reference](https://en.cppreference.com/w/c/variadic?utm_source=chatgpt.com)
-* [write() System Call Documentation](https://man7.org/linux/man-pages/man2/write.2.html?utm_source=chatgpt.com)
 
 ---
 
@@ -264,7 +193,6 @@ AI tools were used during the development of this project for:
 * Clarifying recursion concepts
 * Reviewing edge cases
 * Improving documentation and README structure
-* Debugging certain logical issues
 
 The implementation logic, coding, testing, and final behavior validation were completed manually.
 
@@ -280,6 +208,3 @@ Through this project, I improved my understanding of:
 * Low-level output handling
 * Modular programming
 * Edge case management
-* Writing cleaner and more maintainable C code
-
-This project also served as a strong introduction to recreating standard library behavior from scratch.

@@ -6,37 +6,34 @@
 /*   By: ppourraj <ppourraj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 14:01:20 by ppourraj          #+#    #+#             */
-/*   Updated: 2026/05/19 18:37:56 by ppourraj         ###   ########.fr       */
+/*   Updated: 2026/05/24 20:04:15 by ppourraj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_specifier(char str, va_list args)
+static int	ft_specifier(char format, va_list args)
 {
 	char	*low;
-	char	*up;
+	char	*upp;
 
 	low = "0123456789abcdef";
-	up = "0123456789ABCDEF";
-	if (str == 'c')
+	upp = "0123456789ABCDEF";
+	if (format == 'c')
 		return (ft_putchar(va_arg(args, int)));
-	else if (str == 'd' || str == 'i')
+	else if (format == 'd' || format == 'i')
 		return (ft_putnbr(va_arg(args, int)));
-	else if (str == 's')
+	else if (format == 's')
 		return (ft_putstr(va_arg(args, char *)));
-	else if (str == 'u')
-		return (ft_putnbr_un(va_arg(args, unsigned int)));
-	else if (str == 'x')
+	else if (format == 'u')
+		return (ft_putnbr_unsigned(va_arg(args, unsigned int)));
+	else if (format == 'x')
 		return (ft_print_hex(va_arg(args, unsigned int), low));
-	else if (str == 'X')
-		return (ft_print_hex(va_arg(args, unsigned int), up));
-	else if (str == 'p')
-	{
-		ft_putstr("0x");
-		return (2 + ft_print_hex(va_arg(args, unsigned long), low));
-	}
-	else if (str == '%')
+	else if (format == 'X')
+		return (ft_print_hex(va_arg(args, unsigned int), upp));
+	else if (format == 'p')
+		return (ft_pointer(va_arg(args, void *), low));
+	else if (format == '%')
 		return (ft_putchar('%'));
 	return (0);
 }
@@ -62,12 +59,9 @@ int	ft_printf(const char *s, ...)
 	return (count);
 }
 
-//int main(void)
+//int main()
 //{
-//	char *s = "123456";
-//	printf("%s\n", s);
-//	ft_printf("%s\n", s);
-	
-//	printf("%d\n", 12345);
-//	ft_printf("%d\n", 12345);
+//    char *a = "hello";
+//    ft_printf("Hello %s\n", a);
+//    printf("Hello %p\n", a);
 //}

@@ -6,13 +6,13 @@
 /*   By: ppourraj <ppourraj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 17:03:27 by ppourraj          #+#    #+#             */
-/*   Updated: 2026/05/19 18:21:47 by ppourraj         ###   ########.fr       */
+/*   Updated: 2026/05/24 17:38:36 by ppourraj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_hex(unsigned int n, char *base)
+int	ft_print_hex(unsigned long n, char *base)
 {
 	int	count;
 
