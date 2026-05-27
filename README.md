@@ -204,7 +204,4 @@ Through this project, I improved my understanding of:
 
 * Variadic functions in C
 * Recursive algorithms
-* Formatted output systems
-* Low-level output handling
-* Modular programming
 * Edge case management
