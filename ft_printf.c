@@ -6,7 +6,7 @@
 /*   By: ppourraj <ppourraj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 14:01:20 by ppourraj          #+#    #+#             */
-/*   Updated: 2026/05/26 17:40:41 by ppourraj         ###   ########.fr       */
+/*   Updated: 2026/05/27 10:13:05 by ppourraj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ static int	ft_specifier(char format, va_list args)
 	upp = "0123456789ABCDEF";
 	if (format == 'c')
 		return (ft_putchar(va_arg(args, int)));
-	else if (format == 'a')
-		return (write(1, "my awesome 42", 13));
 	else if (format == 'd' || format == 'i')
 		return (ft_putnbr(va_arg(args, int)));
 	else if (format == 's')
